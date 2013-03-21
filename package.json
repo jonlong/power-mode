@@ -1,0 +1,17 @@
+{
+  "name": "isl-dev-cave",
+  "version": "0.0.0",
+  "description": "Turn an ordinary room into a badass command center with the push of a button.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mpdsocket": "0.1.0"
+  },
+  "repository": "",
+  "author": "Jon Long",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
