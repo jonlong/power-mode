@@ -8,7 +8,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "mpdsocket": "0.1.0"
+    "mpdsocket": "0.1.0",
+    "node-hue-api": "0.1.2"
   },
   "repository": "",
   "author": "Jon Long",

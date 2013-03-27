@@ -10,7 +10,7 @@
 # be disabled and audio files will only be accepted over ipc socket (using
 # file:// protocol) or streaming files over an accepted protocol.
 #
-music_directory    "~/music"
+music_directory    "/Volumes/Secondary/Users/jonlong/Music/"
 #
 # This setting sets the MPD internal playlist directory. The purpose of this
 # directory is storage for playlists created by MPD. The server will use 
@@ -189,6 +189,12 @@ input {
 ###############################################################################
 
 # Audio Output ################################################################
+
+audio_output {
+  type "osx"
+  name "OSX"
+}
+
 #
 # MPD supports various audio output types, as well as playing through multiple 
 # audio outputs at the same time, through multiple audio_output settings 
