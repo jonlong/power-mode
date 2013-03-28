@@ -1,12 +1,14 @@
 var config = require('./config');
 var async = require('async');
 var log = require('./lib/log');
-var komponist = require('komponist');
 var Hue = require('node-hue-api').hue;
 var Room = require('./lib/Room').Room;
+var JohnnyFive = require('johnny-five');
+var komponist = require('komponist');
+var arduinoClient = new JohnnyFive.Board();
 var hueClient = new Hue.HueApi(config.hue.host, config.hue.user);
-var devCave;
 var devCaveOptions = {};
+var devCave;
 
 async.parallel([
   // Connect to MPD
@@ -26,6 +28,13 @@ async.parallel([
       callback(null, result);
     })
     .done();
+  },
+  // Wait for the arduino to connect
+  function(callback){
+    devCaveOptions.arduino = arduinoClient;
+    arduinoClient.on('ready', function(){
+      callback(null);
+    });
   }
 ],
 // After all functions are complete
@@ -37,6 +46,6 @@ function(err, results){
 
   devCave = new Room(devCaveOptions);
   devCave.initialize(function(){
-    devCave.changeHue();
+    devCave.activate();
   });
 });
