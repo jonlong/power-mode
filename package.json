@@ -1,19 +1,19 @@
 {
-  "name": "isl-dev-cave",
-  "version": "0.0.0",
+  "name": "power-mode",
+  "version": "0.0.1",
   "description": "Turn an ordinary room into a badass command center with the push of a button.",
   "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
   "dependencies": {
-    "komponist": "0.0.3",
-    "node-hue-api": "0.1.2",
-    "johnny-five": "0.5.14"
+    "komponist": "git://github.com/hughsk/komponist.git",
+    "node-hue-api": "~0.2.2",
+    "johnny-five": "0.5.14",
+    "async": "~0.2.9"
   },
   "repository": "",
   "author": "Jon Long",
   "license": "BSD",
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "engines": {
+    "node": "0.10.2"
+  }
 }
